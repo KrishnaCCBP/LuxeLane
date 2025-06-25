@@ -6,6 +6,7 @@ Welcome to Luxe Lane, your ultimate destination for stylish and trendy clothing.
 - [Features](#features)
 - [Technologies Used](#technologies-used)
 - [Contact](#contact)
+- [Disclaimer](#disclaimer)
 
 ## Features
 
@@ -25,6 +26,9 @@ Welcome to Luxe Lane, your ultimate destination for stylish and trendy clothing.
 - Database: [Database Name] (MongoDB)
 - Payment Gateway: [Payment Gateway Name] (PayPal)
 - Hosting: [Hosting Service] (Vercel)
+
+## Disclaimer
+The images used in this project are dummy images and are used solely for practice purposes. They do not represent actual products available for sale on Luxe Lane. All images are sourced from placeholder image services and are not intended for commercial use.
    
 ## Contact
 Krishna Sai Prashanth B - krish.biruduraju@gmail.com
