@@ -1,28 +1,30 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { clearCart } from "../redux/slices/cartSlice"; 
+import { clearCart } from "../redux/slices/cartSlice";
 
 export default function OrderConfirmationPage() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const { checkout } = useSelector((state) => state.checkout);
+  const { checkout, loading, error } = useSelector((state) => state.checkout);
 
   useEffect(() => {
-    console.log(checkout);
     if (checkout && checkout._id) {
       dispatch(clearCart());
       localStorage.removeItem("cart");
     } else {
       navigate("/my-orders");
     }
-  }, [checkout, navigate, dispatch]);
+  }, [checkout, dispatch, navigate]);
 
   const calculateEstimatedDelivery = (createdAt) => {
     const orderDate = new Date(createdAt);
     orderDate.setDate(orderDate.getDate() + 10);
     return orderDate.toLocaleDateString();
   };
+
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error: {error}</p>;
 
   return (
     <div className="max-w-4xl mx-auto p-6 bg-white">

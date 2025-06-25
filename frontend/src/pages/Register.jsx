@@ -21,16 +21,16 @@ export default function Register() {
   const isCheckoutRedirect = redirect.includes("checkout");
 
   useEffect(() => {
-    console.log("user:", user, "cart:", cart, "guestId:", guestId);
+    // console.log("user:", user, "cart:", cart, "guestId:", guestId);
     if (user) {
       if (cart?.products.length > 0 && guestId) {
-        console.log("Merging cart and redirecting...");
+        // console.log("Merging cart and redirecting...");
         dispatch(mergeCart({ guestId, user })).then(() => {
           navigate(isCheckoutRedirect ? "/checkout" : "/");
         });
       } else {
         console.log("Redirecting without merging cart...");
-        navigate(isCheckoutRedirect ? "/checkout" : "/");
+        // navigate(isCheckoutRedirect ? "/checkout" : "/");
       }
     }
   }, [user, guestId, cart, navigate, dispatch, isCheckoutRedirect]);

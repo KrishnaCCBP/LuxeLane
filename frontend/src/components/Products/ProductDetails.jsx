@@ -27,7 +27,6 @@ export default function ProductDetails({ productId }) {
   const productFetchId = productId || id;
 
   useEffect(() => {
-    console.log(productFetchId);
     if (productFetchId) {
       dispatch(fetchProductById(productFetchId));
       dispatch(fetchSimilarProducts({ id: productFetchId }));
@@ -35,7 +34,6 @@ export default function ProductDetails({ productId }) {
   }, [dispatch, productFetchId]);
 
   useEffect(() => {
-    console.log(chosenProduct);
     if (chosenProduct?.images?.length > 0) {
       setFirstImage(chosenProduct.images[0].url);
     }
@@ -45,81 +43,6 @@ export default function ProductDetails({ productId }) {
     if (operation === "plus") setQuantity((prev) => prev + 1);
     if (operation === "minus" && quantity > 1) setQuantity((prev) => prev - 1);
   };
-
-  // const chosenProduct = useMemo(
-  //   () => ({
-  //     name: "Stylish Jacket 1",
-  //     price: 120,
-  //     originalPrice: 180,
-  //     description: "This is a stylish jacket and is perfect for any occasion.",
-  //     brand: "LuxeLane",
-  //     material: "Leather",
-  //     sizes: ["S", "M", "L", "XL"],
-  //     colors: ["Red", "Blue"],
-  //     images: [
-  //       {
-  //         url: "https://picsum.photos/500/500?random=1",
-  //         altText: "Stylish Jacket 1",
-  //       },
-  //       {
-  //         url: "https://picsum.photos/500/500?random=2",
-  //         altText: "Stylish Jacket 2",
-  //       },
-  //     ],
-  //   }),
-  //   []
-  // );
-
-  // const similarProducts = [
-  //   {
-  //     _id: "1",
-  //     name: "Product 1",
-  //     price: "120",
-  //     images: [{ url: "https://picsum.photos/500/500?random=9" }],
-  //   },
-  //   {
-  //     _id: "2",
-  //     name: "Product 2",
-  //     price: "150",
-  //     images: [{ url: "https://picsum.photos/500/500?random=10" }],
-  //   },
-  //   {
-  //     _id: "3",
-  //     name: "Product 3",
-  //     price: "160",
-  //     images: [{ url: "https://picsum.photos/500/500?random=11" }],
-  //   },
-  //   {
-  //     _id: "4",
-  //     name: "Product 4",
-  //     price: "200",
-  //     images: [{ url: "https://picsum.photos/500/500?random=12" }],
-  //   },
-  //   {
-  //     _id: "5",
-  //     name: "Product 5",
-  //     price: "200",
-  //     images: [{ url: "https://picsum.photos/500/500?random=13" }],
-  //   },
-  //   {
-  //     _id: "6",
-  //     name: "Product 6",
-  //     price: "200",
-  //     images: [{ url: "https://picsum.photos/500/500?random=14" }],
-  //   },
-  //   {
-  //     _id: "7",
-  //     name: "Product 7",
-  //     price: "200",
-  //     images: [{ url: "https://picsum.photos/500/500?random=15" }],
-  //   },
-  //   {
-  //     _id: "8",
-  //     name: "Product 8",
-  //     price: "200",
-  //     images: [{ url: "https://picsum.photos/500/500?random=16" }],
-  //   },
-  // ];
 
   const handleAddToCart = () => {
     if (!chosenColor || !chosenSize) {

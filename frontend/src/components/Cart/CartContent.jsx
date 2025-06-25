@@ -26,7 +26,7 @@ export default function CartContent({ cart, userId, guestId }) {
   };
 
   const handleRemoveFromCart = (productId, size, color) => {
-    console.log(productId);
+    // console.log(productId);
     dispatch(removeFromCart({ productId, guestId, userId, size, color }));
   };
 

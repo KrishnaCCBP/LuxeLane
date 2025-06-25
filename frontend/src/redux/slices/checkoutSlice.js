@@ -41,7 +41,7 @@ const checkoutSlice = createSlice({
         state.checkout = action.payload;
       })
       .addCase(createCheckout.rejected, (state, action) => {
-        state.loading = true;
+        state.loading = false;
         state.error = action.payload.message;
       });
   },
