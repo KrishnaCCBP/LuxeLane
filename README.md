@@ -29,6 +29,6 @@ Welcome to Luxe Lane, your ultimate destination for stylish and trendy clothing.
 ## Contact
 Krishna Sai Prashanth B - krish.biruduraju@gmail.com
 
-Project Link: https://github.com/krishnaccbp/luxe-lane
+Project Link: https://github.com/KrishnaCCBP/LuxeLane.git
 
 URL : https://luxe-lane-ox86.vercel.app/
